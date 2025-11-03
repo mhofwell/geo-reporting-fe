@@ -8,3 +8,159 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+
+@layer base {
+  :root {
+    /* Warm neutral backgrounds */
+    --background: 32 20% 98%;
+    --foreground: 25 15% 15%;
+
+    /* Cards with subtle warmth */
+    --card: 30 25% 99%;
+    --card-foreground: 25 15% 15%;
+
+    /* Popovers */
+    --popover: 30 25% 99%;
+    --popover-foreground: 25 15% 15%;
+
+    /* Sage green primary - professional and calming */
+    --primary: 150 25% 42%;
+    --primary-foreground: 150 15% 98%;
+
+    /* Warm stone secondary */
+    --secondary: 30 15% 92%;
+    --secondary-foreground: 25 20% 20%;
+
+    /* Muted warm grays */
+    --muted: 28 18% 94%;
+    --muted-foreground: 25 8% 48%;
+
+    /* Soft indigo accent */
+    --accent: 220 40% 88%;
+    --accent-foreground: 220 60% 25%;
+
+    /* Warm terracotta destructive */
+    --destructive: 12 70% 58%;
+    --destructive-foreground: 30 25% 99%;
+
+    /* Subtle warm borders */
+    --border: 28 20% 88%;
+    --input: 28 20% 88%;
+    --ring: 150 25% 42%;
+
+    /* Refined chart palette - harmonious earth tones */
+    --chart-1: 150 45% 48%;  /* Sage green */
+    --chart-2: 220 55% 62%;  /* Soft indigo */
+    --chart-3: 35 75% 62%;   /* Warm amber */
+    --chart-4: 280 40% 65%;  /* Muted purple */
+    --chart-5: 12 65% 62%;   /* Terracotta */
+
+    --radius: 0.5rem;
+
+    /* Sidebar with warm tones */
+    --sidebar-background: 30 22% 97%;
+    --sidebar-foreground: 25 15% 30%;
+    --sidebar-primary: 150 25% 42%;
+    --sidebar-primary-foreground: 150 15% 98%;
+    --sidebar-accent: 150 20% 90%;
+    --sidebar-accent-foreground: 150 30% 25%;
+    --sidebar-border: 28 18% 88%;
+    --sidebar-ring: 150 25% 42%;
+  }
+  .dark {
+    /* Deep warm charcoal background */
+    --background: 25 12% 8%;
+    --foreground: 30 15% 92%;
+
+    /* Cards slightly lighter */
+    --card: 25 12% 10%;
+    --card-foreground: 30 15% 92%;
+
+    /* Popovers */
+    --popover: 25 12% 10%;
+    --popover-foreground: 30 15% 92%;
+
+    /* Brighter sage for dark mode */
+    --primary: 150 35% 55%;
+    --primary-foreground: 25 12% 8%;
+
+    /* Warm stone secondary */
+    --secondary: 25 10% 18%;
+    --secondary-foreground: 30 15% 92%;
+
+    /* Muted warm grays */
+    --muted: 25 10% 16%;
+    --muted-foreground: 28 8% 62%;
+
+    /* Soft indigo accent - brighter for dark */
+    --accent: 220 45% 62%;
+    --accent-foreground: 220 15% 95%;
+
+    /* Warm terracotta destructive */
+    --destructive: 12 75% 62%;
+    --destructive-foreground: 30 15% 95%;
+
+    /* Subtle borders */
+    --border: 25 10% 18%;
+    --input: 25 10% 18%;
+    --ring: 150 35% 55%;
+
+    /* Chart colors optimized for dark mode */
+    --chart-1: 150 42% 58%;  /* Brighter sage */
+    --chart-2: 220 60% 68%;  /* Brighter indigo */
+    --chart-3: 38 85% 65%;   /* Bright amber */
+    --chart-4: 280 48% 70%;  /* Brighter purple */
+    --chart-5: 12 75% 68%;   /* Bright terracotta */
+
+    /* Sidebar dark mode */
+    --sidebar-background: 25 12% 10%;
+    --sidebar-foreground: 30 12% 85%;
+    --sidebar-primary: 150 35% 55%;
+    --sidebar-primary-foreground: 25 12% 8%;
+    --sidebar-accent: 25 10% 18%;
+    --sidebar-accent-foreground: 150 30% 75%;
+    --sidebar-border: 25 8% 16%;
+    --sidebar-ring: 150 35% 55%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  @keyframes float {
+    0%, 100% {
+      transform: perspective(1000px) translateY(0px);
+    }
+    50% {
+      transform: perspective(1000px) translateY(-20px);
+    }
+  }
+
+  @keyframes float-delayed {
+    0%, 100% {
+      transform: perspective(1000px) translateY(0px);
+    }
+    50% {
+      transform: perspective(1000px) translateY(-15px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float-delayed 7s ease-in-out infinite;
+  }
+}
